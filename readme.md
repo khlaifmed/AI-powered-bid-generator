@@ -335,7 +335,7 @@ Enable debug logging by opening Chrome DevTools:
 | "Page structure not recognized" | Freelancer.com updated their site | Wait for extension update |
 
 ## 🤝 Contributing
-
+thanks to Reda El hadfi , who contributed with me in this project , to make freelancers around the world comfortable.
 ### Development Setup
 
 1. **Fork the Repository**
@@ -402,7 +402,7 @@ For support, questions, or feature requests:
 
 - **Issues**: [GitHub Issues](https://github.com/yourusername/gemini-bidder-extension/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/yourusername/gemini-bidder-extension/discussions)
-- **Email**: support@yourdomain.com
+- **Email**: khlaif.mohammed99@gmail.com
 
 ---
 
