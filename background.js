@@ -43,50 +43,60 @@ async function getApiKey() {
  * @throws {Error} Throws an error if the API key is missing, the API call fails, or the response is invalid/blocked.
  */
 async function generateBidWithGemini(description) {
+    // Assume getApiKey is defined elsewhere and correctly retrieves the API key
     const apiKey = await getApiKey();
     if (!apiKey) {
         console.error("Background: Gemini API Key not found in storage.");
-        // Throw an error that will be caught and sent back to the content script/popup
         throw new Error("API Key not set. Please configure it via the extension options (right-click extension icon -> Options).");
     }
 
     // --- API Endpoint and Model Selection ---
-    // Consider using 'gemini-1.5-flash-latest' for speed/cost efficiency if sufficient.
-    // 'gemini-pro' is another common choice. Check Google AI documentation for current models.
+    // Using 'gemini-1.5-flash-latest' as specified in the original code
     const API_ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent";
-    // const API_ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent";
 
-    // --- Prompt Engineering ---
-    // This prompt guides the AI to generate the bid in the desired structure.
-    // It's crucial to be clear and specific.
+    // --- Prompt Engineering (Using the NEW attention-grabbing prompt) ---
     const prompt = `
-Analyze the following freelance job description and generate a concise (approximately 2-5 lines total) and professional bid proposal adhering STRICTLY to the structure below.
+You are a bid proposal generator for a freelance platform. Your goal is to create a **concise (approximately 4-8 lines total)** and highly effective bid proposal that immediately grabs the client's attention by demonstrating understanding of their specific need and proposing a clear, valuable solution.
 
+**Input:**
+
+\`\`\`markdown
 **Job Description:**
 ---
 ${description}
 ---
+\`\`\`
 
-**Required Bid Structure:**
+**Required Output Structure and Content Focus:**
 
-1.  **Personalized Introduction:** Start *exactly* with: "Hey there, I am a [Project Type] engineer with over 5 years of experience."
-    * You MUST identify the specific [Project Type] from the job description (e.g., Flutter Development, SVG Editing, Software Development, Network Engineering, AI Development, Web Development etc.) and insert it into the sentence. Use the most specific and relevant type possible based ONLY on the provided description.
+1.  **Immediate Connection & Understanding (1-2 sentences):**
+    * Start by directly referencing the client's project or core problem (e.g., "Regarding your need for...", "I read your post about...").
+    * Briefly state your understanding of their main goal or pain point based on the description. Show you've read carefully.
 
-2.  **How You Will Help:** Write a *very brief* (1 sentence maximum) summary focusing on how the bidder's skills directly address the client's main requirement or goal mentioned in the job description.
+2.  **Brief Value Proposition / Approach (1-2 sentences):**
+    * Explain, in simple terms, *how* you will solve their specific problem or achieve their goal.
+    * Highlight the *benefit* or *outcome* for the client (e.g., "This will result in...", "Ensuring X and Y...").
 
-3.  **Technical Expertise Statement:** Use the *exact* format: "My expertise includes [Skill 1], [Skill 2], and [Skill 3]."
-    * You MUST identify the 2 or 3 most relevant technical skills directly mentioned or strongly implied in the job description and list them. Do not invent skills not present in the description.
+3.  **Relevant Expertise Snippet (1 sentence):**
+    * Naturally integrate 1-3 of your *most relevant skills* directly related to the solution you just proposed or the technologies mentioned in the job description. Avoid a generic list. Frame it as *how* your skills apply.
 
-4.  **Closing Statement:** End *exactly* with: "With my experience, I’m sure I can finish this task in a very short time, assuring the expected results. Feel free to check my profile and contact me for more details. Regards,"
-    * Do NOT add a name, placeholder like "[Your Name]", or any other text after "Regards,".
+4.  **Call to Action & Professional Closing (1-2 sentences):**
+    * Express enthusiasm or confidence in your ability to deliver.
+    * Invite further discussion (e.g., "I'd love to discuss this further...", "Let's connect to chat about how I can help...").
+    * End with a professional closing like "Best regards," or "Sincerely," followed by a comma.
 
-**Instructions for Generation:**
-* Combine these four parts into a single block of text, following the order precisely.
-* The entire response should be concise, professional, and ready to be submitted as a bid.
-* Do NOT include the section titles ("Personalized Introduction:", "How You Will Help:", etc.) in the final output.
-* Do NOT include any placeholders like "[Your Name]". The bid must end exactly after "Regards,".
+**Strict Generation Rules:**
 
-**Generated Bid Proposal:**
+* Combine the four parts above into a **single block of text** in the specified order.
+* The **total output** must be approximately **4-8 lines**. Be concise in each section.
+* Tailor the language **specifically** to the provided Job Description. Avoid generic phrases where possible.
+* Focus on demonstrating **value** and a clear path to **solving the client's problem**.
+* Maintain a professional, confident, and approachable tone.
+* **Do NOT** include section titles in the final output.
+* **Do NOT** include any placeholders like "[Your Name]".
+* **Do NOT** add any text or characters **after** the chosen professional closing comma (e.g., after "Best regards,").
+
+**Generate the Attention-Grabbing Bid Proposal:**
 `; // End of prompt template literal
 
     console.log("Background: Sending request to Gemini API...");
@@ -99,18 +109,13 @@ ${description}
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                // Structure the request body according to the Gemini API documentation
                 contents: [{
                     parts: [{ text: prompt }]
                 }],
-                // Optional: Configure generation parameters (temperature, safety, etc.)
                 generationConfig: {
-                    temperature: 0.6, // Controls randomness (lower means more focused)
-                    // maxOutputTokens: 200, // Limit response length if needed
-                    // topP: 0.9, // Nucleus sampling parameter
-                    // topK: 40   // Top-k sampling parameter
+                    temperature: 0.7, // Slightly increased temperature for potentially more varied/engaging responses
+                    // maxOutputTokens: 300, // Adjust if needed based on the 4-8 line target (more flexible than before)
                 },
-                // Optional: Configure safety settings to block harmful content
                 safetySettings: [
                     { category: 'HARM_CATEGORY_HARASSMENT', threshold: 'BLOCK_MEDIUM_AND_ABOVE' },
                     { category: 'HARM_CATEGORY_HATE_SPEECH', threshold: 'BLOCK_MEDIUM_AND_ABOVE' },
@@ -120,20 +125,14 @@ ${description}
             }),
         });
 
-        // Attempt to parse the response body as JSON, regardless of status code
         const responseBody = await response.json();
 
-        // Check if the API request was successful (HTTP status 2xx)
         if (!response.ok) {
             console.error("Background: Gemini API Error Response:", response.status, responseBody);
-            // Extract a meaningful error message from the response body if possible
             const errorDetails = responseBody?.error?.message || `API request failed with status ${response.status}. Check API key and endpoint.`;
             throw new Error(errorDetails);
         }
 
-        // --- Process the successful response ---
-
-        // Check for content blocking due to safety filters or other reasons
         if (responseBody.promptFeedback && responseBody.promptFeedback.blockReason) {
             const blockReason = responseBody.promptFeedback.blockReason;
             const safetyRatings = responseBody.promptFeedback.safetyRatings;
@@ -141,8 +140,6 @@ ${description}
             throw new Error(`Content blocked by API safety filters: ${blockReason}. Adjust prompt or content if possible.`);
         }
 
-        // Extract the generated text from the expected location in the response
-        // The exact path might vary slightly depending on the model and API version
         if (responseBody.candidates && responseBody.candidates.length > 0 &&
             responseBody.candidates[0].content && responseBody.candidates[0].content.parts &&
             responseBody.candidates[0].content.parts.length > 0 &&
@@ -150,20 +147,19 @@ ${description}
         {
             const generatedText = responseBody.candidates[0].content.parts[0].text;
             console.log("Background: Received successful response from Gemini.");
-            return generatedText.trim(); // Return the cleaned-up text
+            return generatedText.trim();
         } else {
-            // Handle cases where the response structure is unexpected
             console.error("Background: Unexpected Gemini API response format:", responseBody);
             throw new Error("Could not parse valid bid text from API response (unexpected format).");
         }
     } catch (error) {
-        // Catch network errors (fetch failure) or errors thrown during processing
         console.error("Background: Error during Gemini API call or processing:", error);
-        // Re-throw the error so it can be caught by the message listener and sent back
-        // Prepend context to the error message for clarity
         throw new Error(`Gemini API Error: ${error.message}`);
     }
 }
+
+// Note: The 'getApiKey()' function is assumed to be defined elsewhere in your project
+// and is responsible for securely retrieving the user's Gemini API key.
 
 // --- Message Listener ---
 
@@ -177,6 +173,9 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         console.log("Background: Received 'callGemini' request from content script in tab:", sender.tab?.id);
         // The request should contain the extracted job description
         const jobDescription = request.description;
+        // Also get the extracted bid amount and delivery time
+        const extractedBidAmount = request.extractedBidAmount;
+        const extractedDeliveryTime = request.extractedDeliveryTime;
 
         if (!jobDescription) {
             console.error("Background: 'callGemini' request received without description.");
@@ -191,13 +190,25 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
                 // --- Success Case ---
                 console.log("Background: Successfully generated bid. Sending back to content script.");
                 // Send the successful result back to the content script that made the request
-                sendResponse({ status: "success", bid: bidText });
+                // Include the extracted bid amount and delivery time in the response
+                sendResponse({ 
+                    status: "success", 
+                    bid: bidText,
+                    bidAmount: extractedBidAmount,
+                    deliveryTime: extractedDeliveryTime
+                });
             })
             .catch(error => {
                 // --- Error Case ---
                 console.error("Background: Error during Gemini call processing:", error);
                 // Send the error details back to the content script
-                sendResponse({ status: "error", message: error.message || "An unknown error occurred during bid generation." });
+                // Still include extracted values even on error, so popup can show them
+                sendResponse({ 
+                    status: "error", 
+                    message: error.message || "An unknown error occurred during bid generation.",
+                    bidAmount: extractedBidAmount,
+                    deliveryTime: extractedDeliveryTime
+                });
             });
 
         // Return true to indicate that the sendResponse function will be called asynchronously

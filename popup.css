@@ -1,0 +1,751 @@
+/* --- Futuristic Light Green & Beige Theme CSS Variables --- */
+:root {
+    /* Futuristic Color Palette */
+    --background-primary: #f8f9f2; /* Light beige background */
+    --background-secondary: #f0f4e8; /* Slightly darker beige for containers */
+    --background-tertiary: #e8f0e0; /* Light green for interactive elements */
+
+    /* Accent Colors - Light Green Variations */
+    --accent-primary: #7cb342; /* Main light green */
+    --accent-secondary: #8bc34a; /* Lighter green */
+    --accent-tertiary: #9ccc65; /* Even lighter green */
+    --accent-dark: #558b2f; /* Darker green for contrast */
+    --accent-light: #c5e1a5; /* Very light green */
+
+    /* Beige Variations */
+    --beige-light: #faf8f3; /* Very light beige */
+    --beige-medium: #f5f2e8; /* Medium beige */
+    --beige-dark: #e8e0d0; /* Darker beige */
+
+    /* Text Colors */
+    --text-primary: #2e3a1f; /* Dark green text */
+    --text-secondary: #4a5d2f; /* Medium green text */
+    --text-muted: #6b7c4a; /* Muted green text */
+    --text-light: #ffffff; /* White text for contrast */
+
+    /* Border Colors */
+    --border-light: rgba(124, 179, 66, 0.2); /* Light green border */
+    --border-medium: rgba(124, 179, 66, 0.4); /* Medium green border */
+    --border-dark: rgba(124, 179, 66, 0.6); /* Dark green border */
+
+    /* Glow Effects */
+    --glow-primary: rgba(124, 179, 66, 0.3); /* Green glow */
+    --glow-secondary: rgba(139, 195, 74, 0.2); /* Light green glow */
+
+    /* Status Colors */
+    --status-success: #4caf50; /* Success green */
+    --status-success-bg: rgba(76, 175, 80, 0.1);
+    --status-error: #f44336; /* Error red */
+    --status-error-bg: rgba(244, 67, 54, 0.1);
+    --status-warning: #ff9800; /* Warning orange */
+    --status-warning-bg: rgba(255, 152, 0, 0.1);
+    --status-info: #2196f3; /* Info blue */
+    --status-info-bg: rgba(33, 150, 243, 0.1);
+
+    /* Typography */
+    --font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+    --border-radius-small: 6px;
+    --border-radius-medium: 12px;
+    --border-radius-large: 18px;
+    --spacing-unit: 8px;
+    --transition-speed-fast: 0.2s;
+    --transition-speed-normal: 0.3s;
+    --transition-speed-slow: 0.5s;
+
+    /* Background Animation Variables */
+    --bg-animation-speed: 60s;
+    --bg-size: 300%;
+}
+
+/* --- Body & Background Animation --- */
+body {
+    width: 360px;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    font-size: 14px;
+    color: var(--text-primary);
+    /* Futuristic animated background with light green and beige */
+    background: linear-gradient(135deg, 
+        var(--background-primary) 0%, 
+        var(--beige-light) 25%, 
+        var(--accent-light) 50%, 
+        var(--beige-medium) 75%, 
+        var(--background-primary) 100%);
+    background-size: var(--bg-size) var(--bg-size);
+    animation: gradient-animation var(--bg-animation-speed) ease infinite alternate;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Futuristic background texture */
+body::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     /* Futuristic hexagonal pattern */
+     background: 
+         radial-gradient(circle at 20% 20%, rgba(124, 179, 66, 0.1) 0%, transparent 50%),
+         radial-gradient(circle at 80% 80%, rgba(139, 195, 74, 0.1) 0%, transparent 50%),
+         radial-gradient(circle at 40% 60%, rgba(156, 204, 101, 0.05) 0%, transparent 50%);
+     background-size: 60px 60px, 40px 40px, 80px 80px;
+     opacity: 0.8;
+     pointer-events: none;
+     z-index: -1;
+}
+
+
+/* --- Container Styling (Futuristic Design) --- */
+.container {
+    padding: calc(var(--spacing-unit) * 3);
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--spacing-unit) * 2.5);
+    background: linear-gradient(145deg, 
+        var(--background-secondary) 0%, 
+        var(--beige-light) 100%);
+    border-radius: var(--border-radius-large);
+    box-shadow: 
+        0 8px 32px rgba(124, 179, 66, 0.15),
+        0 4px 16px rgba(139, 195, 74, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    margin: calc(var(--spacing-unit) * 3) auto;
+    width: calc(100% - var(--spacing-unit) * 6);
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    border: 1px solid var(--border-light);
+    backdrop-filter: blur(10px);
+}
+
+
+/* --- Title Styling (Futuristic) --- */
+h3.app-title {
+    margin: 0 0 var(--spacing-unit) 0;
+    color: var(--text-primary);
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-unit);
+    letter-spacing: -0.02em;
+    /* Futuristic text effect */
+    text-shadow: 
+        0 0 10px var(--glow-primary),
+        0 2px 4px rgba(124, 179, 66, 0.3);
+    position: relative;
+}
+
+h3.app-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--accent-primary) 50%, 
+        transparent 100%);
+    border-radius: 1px;
+}
+
+h3.app-title svg.app-icon {
+    width: 28px;
+    height: 28px;
+    fill: var(--accent-primary);
+    opacity: 1;
+    /* Futuristic pulse animation */
+    animation: futuristic-pulse 3s infinite ease-in-out alternate;
+    filter: drop-shadow(0 0 8px var(--glow-primary));
+}
+
+@keyframes futuristic-pulse {
+    0% { 
+        transform: scale(1) rotate(0deg); 
+        opacity: 1; 
+        filter: drop-shadow(0 0 8px var(--glow-primary));
+    }
+    100% { 
+        transform: scale(1.1) rotate(5deg); 
+        opacity: 0.8; 
+        filter: drop-shadow(0 0 12px var(--glow-secondary));
+    }
+}
+
+
+/* --- Button Styling (Futuristic) --- */
+button.action-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-unit);
+    padding: calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 2.5);
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    border-radius: var(--border-radius-medium);
+    font-size: 16px;
+    font-weight: 600;
+    transition: all var(--transition-speed-normal) ease;
+    box-shadow: 
+        0 4px 16px rgba(124, 179, 66, 0.2),
+        0 2px 8px rgba(139, 195, 74, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    backdrop-filter: blur(5px);
+}
+
+button.action-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.2), 
+        transparent);
+    transition: left var(--transition-speed-slow) ease;
+}
+
+button.action-button:hover::before {
+    left: 100%;
+}
+
+button.action-button svg.button-icon {
+    width: 20px;
+    height: 20px;
+    fill: white;
+    transition: transform var(--transition-speed-fast) ease;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+/* Button Hover/Active Effects */
+button.action-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 8px 24px rgba(124, 179, 66, 0.3),
+        0 4px 12px rgba(139, 195, 74, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+button.action-button:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: 
+        0 2px 8px rgba(124, 179, 66, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Specific Button Colors & Glows */
+#generateBtn {
+    background: linear-gradient(145deg, var(--accent-primary), color-mix(in srgb, var(--accent-primary) 80%, black 20%));
+    color: white;
+}
+#generateBtn:hover:not(:disabled) {
+     background: linear-gradient(145deg, color-mix(in srgb, var(--accent-primary) 100%, white 10%), var(--accent-primary));
+     box-shadow: 0 6px 24px var(--glow-primary); /* Primary accent glow */
+}
+
+#insertBtn {
+    background: linear-gradient(145deg, var(--accent-secondary), color-mix(in srgb, var(--accent-secondary) 80%, black 20%));
+    color: white;
+}
+#insertBtn:hover:not(:disabled) {
+    background: linear-gradient(145deg, color-mix(in srgb, var(--accent-secondary) 100%, white 10%), var(--accent-secondary));
+    box-shadow: 0 6px 24px var(--glow-secondary); /* Secondary accent glow */
+}
+
+#placeBidBtn {
+    background: linear-gradient(145deg, var(--accent-dark), color-mix(in srgb, var(--accent-dark) 80%, black 20%));
+    color: white;
+}
+#placeBidBtn:hover:not(:disabled) {
+    background: linear-gradient(145deg, color-mix(in srgb, var(--accent-dark) 100%, white 10%), var(--accent-dark));
+    box-shadow: 0 6px 24px rgba(155, 89, 182, 0.3); /* Purple glow */
+}
+
+/* Disabled State */
+button.action-button:disabled {
+    background: var(--background-tertiary);
+    color: var(--text-muted);
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+     opacity: 0.6;
+}
+button.action-button:disabled svg.button-icon {
+    fill: var(--text-muted);
+    transform: none;
+}
+ button.action-button:disabled::before {
+     opacity: 0 !important;
+ }
+
+/* Loading State */
+button.action-button.loading {
+    cursor: wait;
+}
+button.action-button.loading .button-text {
+    opacity: 0.7;
+}
+button.action-button.loading .spinner {
+    display: inline-block;
+    margin-left: var(--spacing-unit);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    width: 16px;
+    height: 16px;
+    animation: spin 0.8s linear infinite;
+}
+.spinner { display: none; }
+
+
+/* --- Status Message Styling (Futuristic) --- */
+p#status {
+    margin: calc(var(--spacing-unit) * 2) 0;
+    padding: calc(var(--spacing-unit) * 1.5) calc(var(--spacing-unit) * 2);
+    border-radius: var(--border-radius-medium);
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, 
+        var(--beige-light) 0%, 
+        var(--background-secondary) 100%);
+    border: 1px solid var(--border-light);
+    box-shadow: 
+        0 2px 8px rgba(124, 179, 66, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    transition: all var(--transition-speed-normal) ease;
+}
+
+p#status::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, 
+        transparent 30%, 
+        rgba(124, 179, 66, 0.05) 50%, 
+        transparent 70%);
+    animation: pulse-bg 3s infinite ease-in-out;
+    z-index: -1;
+}
+
+@keyframes pulse-bg {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+}
+
+p#status span {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+}
+
+p#status svg {
+    width: 16px;
+    height: 16px;
+    margin-right: var(--spacing-unit);
+    vertical-align: middle;
+    fill: currentColor;
+    transition: transform var(--transition-speed-fast) ease;
+}
+
+/* Specific status colors with futuristic styling */
+p#status.success { 
+    color: var(--status-success); 
+    border-color: var(--accent-primary);
+    background: linear-gradient(145deg, 
+        rgba(76, 175, 80, 0.1) 0%, 
+        var(--beige-light) 100%);
+    box-shadow: 
+        0 2px 8px rgba(76, 175, 80, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+p#status.error { 
+    color: var(--status-error); 
+    border-color: var(--accent-dark);
+    background: linear-gradient(145deg, 
+        rgba(244, 67, 54, 0.1) 0%, 
+        var(--beige-light) 100%);
+    box-shadow: 
+        0 2px 8px rgba(244, 67, 54, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+p#status.warning { 
+    color: var(--status-warning); 
+    border-color: var(--accent-tertiary);
+    background: linear-gradient(145deg, 
+        rgba(255, 152, 0, 0.1) 0%, 
+        var(--beige-light) 100%);
+    box-shadow: 
+        0 2px 8px rgba(255, 152, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+p#status.info { 
+    color: var(--status-info); 
+    border-color: var(--accent-primary);
+    background: linear-gradient(145deg, 
+        rgba(33, 150, 243, 0.1) 0%, 
+        var(--beige-light) 100%);
+    box-shadow: 
+        0 2px 8px rgba(33, 150, 243, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+
+/* --- Form Styling (Futuristic) --- */
+div.form-group {
+    margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+div.form-row {
+    display: flex;
+    gap: calc(var(--spacing-unit) * 2);
+    margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+div.form-row > div {
+    flex: 1;
+}
+
+div.form-group label {
+    display: block;
+    margin-bottom: calc(var(--spacing-unit) * 0.75);
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+div.form-group input[type="number"],
+div.form-group input[type="text"] {
+    width: 100%;
+    padding: calc(var(--spacing-unit) * 1.25) calc(var(--spacing-unit) * 1.5);
+    border: 1px solid var(--border-light);
+    border-radius: var(--border-radius-small);
+    background: linear-gradient(145deg, 
+        var(--beige-light) 0%, 
+        var(--background-secondary) 100%);
+    color: var(--text-primary);
+    font-size: 14px;
+    transition: all var(--transition-speed-normal) ease;
+    box-shadow: 
+        0 2px 4px rgba(124, 179, 66, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+div.form-group textarea#bidPreview {
+    width: 100%;
+    min-height: 120px;
+    padding: calc(var(--spacing-unit) * 1.25) calc(var(--spacing-unit) * 1.5);
+    border: 1px solid var(--border-light);
+    border-radius: var(--border-radius-small);
+    background: linear-gradient(145deg, 
+        var(--beige-light) 0%, 
+        var(--background-secondary) 100%);
+    color: var(--text-primary);
+    font-size: 14px;
+    font-family: inherit;
+    resize: vertical;
+    transition: all var(--transition-speed-normal) ease;
+    box-shadow: 
+        0 2px 4px rgba(124, 179, 66, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+div.form-group input[type="number"]:focus,
+div.form-group input[type="text"]:focus,
+div.form-group textarea#bidPreview:focus {
+    border-color: var(--accent-primary);
+    outline: none;
+    box-shadow: 
+        0 0 15px var(--glow-primary),
+        0 2px 8px rgba(124, 179, 66, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    background: linear-gradient(145deg, 
+        color-mix(in srgb, var(--beige-light) 90%, var(--accent-primary) 5%) 0%, 
+        color-mix(in srgb, var(--background-secondary) 90%, var(--accent-primary) 5%) 100%);
+    transform: translateY(-1px);
+}
+
+
+/* --- Checkbox Styling (Futuristic) --- */
+div.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--spacing-unit) * 1.5);
+    margin-bottom: calc(var(--spacing-unit) * 2);
+    padding: calc(var(--spacing-unit) * 2);
+    background: linear-gradient(145deg, 
+        var(--beige-light) 0%, 
+        var(--background-secondary) 100%);
+    border-radius: var(--border-radius-medium);
+    border: 1px solid var(--border-light);
+    box-shadow: 
+        0 2px 4px rgba(124, 179, 66, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+div.checkbox-group label.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-unit);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: color var(--transition-speed-fast) ease;
+    padding: calc(var(--spacing-unit) * 0.75);
+    border-radius: var(--border-radius-small);
+    background: linear-gradient(145deg, 
+        rgba(255, 255, 255, 0.1) 0%, 
+        rgba(124, 179, 66, 0.05) 100%);
+    border: 1px solid transparent;
+    transition: all var(--transition-speed-fast) ease;
+}
+
+div.checkbox-group label.checkbox-label:hover {
+    background: linear-gradient(145deg, 
+        rgba(124, 179, 66, 0.1) 0%, 
+        rgba(139, 195, 74, 0.05) 100%);
+    border-color: var(--border-light);
+    transform: translateX(4px);
+}
+
+div.checkbox-group input[type="checkbox"].form-checkbox {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-medium);
+    border-radius: var(--border-radius-small);
+    background: linear-gradient(145deg, 
+        var(--beige-light) 0%, 
+        var(--background-secondary) 100%);
+    cursor: pointer;
+    position: relative;
+    transition: all var(--transition-speed-fast) ease;
+    box-shadow: 
+        0 2px 4px rgba(124, 179, 66, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+div.checkbox-group input[type="checkbox"].form-checkbox:checked {
+    background: linear-gradient(145deg, 
+        var(--accent-secondary) 0%, 
+        var(--accent-primary) 100%);
+    border-color: var(--accent-primary);
+    box-shadow: 
+        0 0 10px var(--glow-primary),
+        0 2px 8px rgba(124, 179, 66, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+div.checkbox-group input[type="checkbox"].form-checkbox:focus {
+    outline: none;
+    box-shadow: 
+        0 0 15px var(--glow-primary),
+        0 2px 8px rgba(124, 179, 66, 0.2);
+}
+
+div.checkbox-group input[type="checkbox"].form-checkbox:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    animation: checkbox-pop 0.3s ease-out;
+}
+
+@keyframes checkbox-pop {
+    0% { transform: translate(-50%, -50%) scale(0); }
+    80% { transform: translate(-50%, -50%) scale(1.2); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+div.checkbox-group input[type="checkbox"].form-checkbox:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: var(--background-secondary);
+}
+
+div.checkbox-group input[type="checkbox"].form-checkbox:disabled + label.checkbox-label {
+    opacity: 0.5;
+    cursor: not-allowed;
+    color: var(--text-muted);
+}
+
+
+/* --- Preview Container (Futuristic) --- */
+div.preview-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-speed-slow) ease, 
+                opacity var(--transition-speed-normal) ease,
+                transform var(--transition-speed-normal) ease;
+    opacity: 0;
+    transform: translateY(-10px);
+    background: linear-gradient(145deg, 
+        var(--beige-light) 0%, 
+        var(--background-secondary) 100%);
+    border-radius: var(--border-radius-medium);
+    border: 1px solid var(--border-light);
+    box-shadow: 
+        0 4px 16px rgba(124, 179, 66, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    margin-top: calc(var(--spacing-unit) * 2);
+}
+
+div.preview-container.visible {
+    max-height: 500px;
+    opacity: 1;
+    transform: translateY(0);
+    padding: calc(var(--spacing-unit) * 2);
+    animation: preview-slide-in 0.5s ease-out;
+}
+
+@keyframes preview-slide-in {
+    0% { 
+        opacity: 0; 
+        transform: translateY(-20px) scale(0.95); 
+    }
+    100% { 
+        opacity: 1; 
+        transform: translateY(0) scale(1); 
+    }
+}
+
+
+/* --- Section Title (Futuristic) --- */
+div.preview-section-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: calc(var(--spacing-unit) * 1.5);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    position: relative;
+    text-shadow: 
+        0 0 8px var(--glow-primary),
+        0 2px 4px rgba(124, 179, 66, 0.2);
+}
+
+div.preview-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--accent-primary) 25%, 
+        var(--accent-secondary) 50%, 
+        var(--accent-primary) 75%, 
+        transparent 100%);
+    border-radius: 1px;
+    box-shadow: 0 0 8px var(--glow-primary);
+}
+
+
+/* --- Options Link (Futuristic) --- */
+a#optionsLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-unit);
+    padding: calc(var(--spacing-unit) * 1.5);
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: var(--border-radius-medium);
+    transition: all var(--transition-speed-normal) ease;
+    background: linear-gradient(145deg, 
+        var(--beige-light) 0%, 
+        var(--background-secondary) 100%);
+    border: 1px solid var(--border-light);
+    box-shadow: 
+        0 2px 8px rgba(124, 179, 66, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    margin-top: calc(var(--spacing-unit) * 2);
+}
+
+a#optionsLink svg.options-icon {
+    width: 16px;
+    height: 16px;
+    fill: var(--text-secondary);
+    transition: all var(--transition-speed-fast) ease;
+    filter: drop-shadow(0 1px 2px rgba(124, 179, 66, 0.2));
+}
+
+a#optionsLink:hover {
+    color: var(--accent-primary);
+    background: linear-gradient(145deg, 
+        color-mix(in srgb, var(--beige-light) 90%, var(--accent-primary) 5%) 0%, 
+        color-mix(in srgb, var(--background-secondary) 90%, var(--accent-primary) 5%) 100%);
+    box-shadow: 
+        0 4px 16px rgba(124, 179, 66, 0.2),
+        0 2px 8px rgba(139, 195, 74, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    transform: translateY(-1px);
+}
+
+a#optionsLink:hover svg.options-icon {
+    fill: var(--accent-primary);
+    filter: drop-shadow(0 0 8px var(--glow-primary));
+    transform: scale(1.1);
+}
+
+
+/* --- Keyframes for Animations --- */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes gradient-animation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Spinner animation class used by JS */
+.spin { animation: spin 1s linear infinite; }
